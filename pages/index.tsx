@@ -43,8 +43,6 @@ export default function Home() {
 
       const res = await req.response;
 
-      console.log(res.statusCode);
-
       console.log(await res.body.json());
     } catch (error) {
       console.log(error);

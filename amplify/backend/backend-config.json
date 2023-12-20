@@ -1,0 +1,59 @@
+{
+  "api": {
+    "amplifyv6pagesrouter": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    },
+    "api669dbb52": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "amplifyv6pagesrouter644d2f0e"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "amplifyv6pagesrouter644d2f0e": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_amplifyv6pagesrouter644d2f0e_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifyv6pagesrouter644d2f0e"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifyv6pagesrouter644d2f0e_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifyv6pagesrouter644d2f0e"
+        }
+      ]
+    }
+  }
+}

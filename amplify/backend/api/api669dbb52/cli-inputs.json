@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "amplifyv6pagesrouter644d2f0e",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "amplifyv6pagesrouter",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}

@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyv6pagesrouter-dev-135029-authRole",
+      "UnauthRoleArn": "arn:aws:iam::519537122948:role/amplify-amplifyv6pagesrouter-dev-135029-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::519537122948:role/amplify-amplifyv6pagesrouter-dev-135029-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplifyv6pagesrouter-dev-135029-deployment",
+      "UnauthRoleName": "amplify-amplifyv6pagesrouter-dev-135029-unauthRole",
+      "StackName": "amplify-amplifyv6pagesrouter-dev-135029",
+      "StackId": "arn:aws:cloudformation:us-east-1:519537122948:stack/amplify-amplifyv6pagesrouter-dev-135029/7bd1cdc0-9e9f-11ee-9deb-0ad8e59afde1",
+      "AmplifyAppId": "d2rm7bbcur3yv7"
+    },
+    "categories": {
+      "api": {
+        "amplifyv6pagesrouter": {},
+        "api669dbb52": {}
+      },
+      "function": {
+        "amplifyv6pagesrouter644d2f0e": {
+          "deploymentBucketName": "amplify-amplifyv6pagesrouter-dev-135029-deployment",
+          "s3Key": "amplify-builds/amplifyv6pagesrouter644d2f0e-7146706134446d796743-build.zip"
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import { DataStore, Predicates } from "aws-amplify/datastore";
 import { Habit } from "@/src/models";
 import React, { useEffect } from "react";
-import { get } from "aws-amplify/api";
+import { get, post } from "aws-amplify/api";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,19 +28,24 @@ export default function Home() {
 
   const getItems = async () => {
     try {
-      const req = get({
+      const req = post({
         apiName: "api669dbb52",
         path: "/items",
         options: {
           headers: {
             Authorization: "test",
           },
+          body: {
+            statusCode: 500,
+          },
         },
       });
 
       const res = await req.response;
 
-      console.log(res.body.json());
+      console.log(res.statusCode);
+
+      console.log(await res.body.json());
     } catch (error) {
       console.log(error);
     }

@@ -32,7 +32,7 @@ app.use(function(req, res, next) {
 
 app.get('/items', function(req, res) {
   // Add your code here
-  res.status(500).json({error: 'Something went wrong'});
+    res.status(500).json({error: 'Something went wrong'});
 });
 
 app.get('/items/*', function(req, res) {
@@ -46,12 +46,12 @@ app.get('/items/*', function(req, res) {
 
 app.post('/items', function(req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.status(req.body.statusCode).json({error: 'Something went wrong'});
 });
 
-app.post('/items/*', function(req, res) {
+app.post('/items/:statusCode', function(req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.status(Number(req.params.statusCode)).json({success: `Status: ${req.params.statusCode}`, url: req.url, body: req.body})
 });
 
 /****************************

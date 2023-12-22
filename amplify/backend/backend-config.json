@@ -1,13 +1,30 @@
 {
   "api": {
     "amplifyv6pagesrouter": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifyv6pagesrouterd12f41b5"
+        }
+      ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authamplifyv6pagesrouterd12f41b5"
+              }
+            }
+          ],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDate": "2024-12-21T16:50:20.388Z",
+              "apiKeyExpirationDays": 365,
+              "description": ""
             },
             "authenticationType": "API_KEY"
           }
@@ -15,45 +32,32 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
-    },
-    "api669dbb52": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "amplifyv6pagesrouter644d2f0e"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
     }
   },
-  "function": {
-    "amplifyv6pagesrouter644d2f0e": {
-      "build": true,
+  "auth": {
+    "amplifyv6pagesrouterd12f41b5": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_amplifyv6pagesrouter644d2f0e_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifyv6pagesrouter644d2f0e"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifyv6pagesrouter644d2f0e_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifyv6pagesrouter644d2f0e"
-        }
-      ]
+      "service": "Cognito"
     }
   }
 }

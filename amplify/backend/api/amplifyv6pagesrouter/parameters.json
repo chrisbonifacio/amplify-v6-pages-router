@@ -1,5 +1,11 @@
 {
   "AppSyncApiName": "amplifyv6pagesrouter",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authamplifyv6pagesrouterd12f41b5",
+      "Outputs.UserPoolId"
+    ]
+  }
 }

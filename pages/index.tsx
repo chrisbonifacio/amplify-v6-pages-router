@@ -1,12 +1,23 @@
 import { Inter } from "next/font/google";
-import { DataStore, Predicates } from "aws-amplify/datastore";
+import {
+  AuthModeStrategyType,
+  DataStore,
+  Predicates,
+} from "aws-amplify/datastore";
 import { Habit } from "@/src/models";
 import React, { useEffect } from "react";
 import { get, post } from "aws-amplify/api";
+import { useAuthenticator } from "@aws-amplify/ui-react";
+
+DataStore.configure({
+  authModeStrategyType: AuthModeStrategyType.MULTI_AUTH,
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { authStatus, signOut } = useAuthenticator();
+
   const [habits, setHabits] = React.useState<Habit[]>();
 
   const createAndUpdateHabit = async () => {
@@ -63,6 +74,9 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
+      {authStatus === "authenticated" && (
+        <button onClick={signOut}>Sign Out</button>
+      )}
       <button onClick={createAndUpdateHabit}>Create And Update Habit</button>
 
       <button onClick={deleteHabits}>Delete Habits</button>

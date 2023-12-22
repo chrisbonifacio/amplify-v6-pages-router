@@ -2,8 +2,11 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateHabit = /* GraphQL */ `
-  subscription OnCreateHabit($filter: ModelSubscriptionHabitFilterInput) {
-    onCreateHabit(filter: $filter) {
+  subscription OnCreateHabit(
+    $filter: ModelSubscriptionHabitFilterInput
+    $owner: String
+  ) {
+    onCreateHabit(filter: $filter, owner: $owner) {
       id
       name
       count
@@ -12,13 +15,17 @@ export const onCreateHabit = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
       __typename
     }
   }
 `;
 export const onUpdateHabit = /* GraphQL */ `
-  subscription OnUpdateHabit($filter: ModelSubscriptionHabitFilterInput) {
-    onUpdateHabit(filter: $filter) {
+  subscription OnUpdateHabit(
+    $filter: ModelSubscriptionHabitFilterInput
+    $owner: String
+  ) {
+    onUpdateHabit(filter: $filter, owner: $owner) {
       id
       name
       count
@@ -27,13 +34,17 @@ export const onUpdateHabit = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
       __typename
     }
   }
 `;
 export const onDeleteHabit = /* GraphQL */ `
-  subscription OnDeleteHabit($filter: ModelSubscriptionHabitFilterInput) {
-    onDeleteHabit(filter: $filter) {
+  subscription OnDeleteHabit(
+    $filter: ModelSubscriptionHabitFilterInput
+    $owner: String
+  ) {
+    onDeleteHabit(filter: $filter, owner: $owner) {
       id
       name
       count
@@ -42,6 +53,7 @@ export const onDeleteHabit = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
       __typename
     }
   }
